@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAuthentification", "BlazorAuthentification.csproj", "{65DAD360-7CFD-40F6-80A1-A2F9FA5D2875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHash", "..\PasswordHash\PasswordHash.csproj", "{75047715-CA1A-4829-A991-EDA81563140D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65DAD360-7CFD-40F6-80A1-A2F9FA5D2875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65DAD360-7CFD-40F6-80A1-A2F9FA5D2875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65DAD360-7CFD-40F6-80A1-A2F9FA5D2875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65DAD360-7CFD-40F6-80A1-A2F9FA5D2875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75047715-CA1A-4829-A991-EDA81563140D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75047715-CA1A-4829-A991-EDA81563140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75047715-CA1A-4829-A991-EDA81563140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75047715-CA1A-4829-A991-EDA81563140D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDFDE784-9C42-4B66-85FB-5F0BB7690E42}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿@page "/login"
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ILocalStorageService LocalStorage
+@inject IPasswordChecker pHash;
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Login</h3>
+
+    <EditForm Model="user" OnSubmit="HandleLogin">
+    <label for="username">Name</label>
+    <InputText id="username" @bind-Value="user.Username" />
+    <label for="password">Password</label>
+    <InputText id="password" @bind-Value="user.Password" type="password" />
+    <button type="submit" class="btn btn-primary">Do it!</button>
+    </EditForm>
+
+@code {
+    UserLoginModel user = new UserLoginModel();
+
+    async Task HandleLogin()
+    {   
+        var result = await Http.PostAsJsonAsync("api/auth", user);
+        var token = await result.Content.ReadAsStringAsync();
+        if (token=="")
+        {
+            token = pHash.CheckUserPassword(user);
+        }
+        if (token==null)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", $"Incorrect username or password!");
+            NavigationManager.NavigateTo("login");
+        }
+        if (!string.IsNullOrEmpty(token))
+        {
+            await LocalStorage.SetItemAsync("token", token);
+        }        
+        await AuthStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("/");
+    }  
+}
